@@ -33,6 +33,12 @@ const signoutUser = () => {
   }
 };
 
+const signupUser = ({ email, password, confirmPassword }) => {
+  return function(dispatch) {
+    //axios.post(``)
+  }
+};
+
 const authError = (error) => {
   return {
     type: AUTH_ERROR,
