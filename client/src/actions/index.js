@@ -54,9 +54,24 @@ const authError = (error) => {
   };
 };
 
+const fetchMessage = () => {
+  return function(dispatch) {
+    const requestOptions = {
+      headers: {
+        authorization: localStorage.getItem('token')
+      }
+    };
+    axios.get(ROOT_URL, requestOptions)
+      .then(response => {
+        console.log(response);
+      });
+  };
+};
+
 export {
   signinUser,
   signoutUser,
   signupUser,
-  authError
+  authError,
+  fetchMessage
 }
